@@ -1,10 +1,5 @@
 import { MovieCard } from './MovieCard'
-
-interface GenreResponseProps {
-  id: number
-  name: 'action' | 'comedy' | 'documentary' | 'drama' | 'horror' | 'family'
-  title: string
-}
+import '../styles/content.scss'
 
 interface MovieProps {
   imdbID: string
@@ -25,7 +20,6 @@ interface ContentProps {
 }
 
 export function Content({ selectedGenre, movies }: ContentProps) {
-  // Complete aqui
   return (
     <div className='container'>
       <header>
