@@ -1,6 +1,6 @@
 import { Button } from './Button'
 import '../styles/sidebar.scss'
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { api } from '../services/api'
 
 interface GenreResponseProps {
@@ -26,9 +26,9 @@ interface SideBarProps {
 }
 
 export function SideBar({ setSelectedGenre, setMovies }: SideBarProps) {
-  function handleClickButton(id: number) {
+  const handleClickButton = useCallback((id: number) => {
     setSelectedGenreId(id)
-  }
+  }, []);
 
   const [genres, setGenres] = useState<GenreResponseProps[]>([])
   const [selectedGenreId, setSelectedGenreId] = useState(1)
